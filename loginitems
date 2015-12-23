@@ -45,9 +45,9 @@ done
 thisdir=$(dirname "$(which "$0")")
 
 if [ "$action" = "add" ]; then
-    $thisdir/add $name $path $hide
+    $thisdir/add $name $path $hide >> /dev/null
 elif [ "$action" = "delete" ]; then
-    $thisdir/delete $name
+    $thisdir/delete $name >> /dev/null
 elif [ "$action" = "list" ]; then
     $thisdir/list
 fi
