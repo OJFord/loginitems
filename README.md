@@ -17,6 +17,9 @@ For example:
 % loginitems -a Caffeine -p "/Applications/Caffeine.app"
 % loginitems -l
 Caffeine
+% loginitems -d Caffeine
+% loginitems -l
+%
 ```
 
 ## Todo
