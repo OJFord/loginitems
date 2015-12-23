@@ -1,6 +1,11 @@
 # loginitems
 loginitems is a simple command line tool to manage applications that launch on startup on OS X. While [previously possible with launchctl]() this is deprecated as of some time before or with 10.11.
 
+## Installation
+I'm a big brew fan - so while this repo isn't popular enough to be included in official formulae, if you share my preference then you can run [the formula from my fork here](https://github.com/OJFord/homebrew/blob/loginitems/Library/Formula/loginitems.rb).
+
+Otherwise, you'll need to clone/download the repo to somewhere on your path, and `chmod +x` each of the included scripts.
+
 ## Usage
 ```sh
 Usage: loginitems [-h | -a NAME -p PATH [-s HIDE?] | -d NAME | -l]
