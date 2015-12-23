@@ -41,14 +41,11 @@ while getopts "$opts" opt; do
     esac
 done
 
-
-thisdir=$(dirname "$(which "$0")")
-
 if [ "$action" = "add" ]; then
-    $thisdir/add $name $path $hide >> /dev/null
+    loginitems-add $name $path $hide >> /dev/null
 elif [ "$action" = "delete" ]; then
-    $thisdir/delete $name >> /dev/null
+    loginitems-rm $name >> /dev/null
 elif [ "$action" = "list" ]; then
-    $thisdir/list
+    loginitems-ls
 fi
 
