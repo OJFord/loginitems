@@ -1,0 +1,8 @@
+#!/usr/bin/osascript
+
+on run (argv)
+    tell application "System Events"
+        get the name of every login item
+    end tell
+end run
+

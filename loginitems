@@ -1,0 +1,54 @@
+#!/bin/sh
+
+usage(){
+    echo "Usage: loginitems [-h | -a NAME -p PATH [-s HIDE?] | -d NAME | -l]"
+    echo "  -h Show this help message."
+    echo "  -a Add an application, optionally hide with -s false."
+    echo "  -p Path to application."
+    echo "  -s Show/hide application; defaults to true (no hide)."
+    echo "  -d Delete an application from login items."
+    echo "  -l List all login items."
+}
+
+hide="false"
+falsehood="false no 0"
+opts="ha:p:s:d:l"
+while getopts "$opts" opt; do
+    case "$opt" in
+        a)
+            action="add"
+            name=${OPTARG}
+            ;;
+        p)
+            path=${OPTARG}
+            ;;
+        s)
+            if [[ $falsehood =~ (^| )${OPTARG}($| ) ]]
+                then  # false show, so do hide
+                    hide="true"
+            fi
+            ;;
+        d)
+            action="delete"
+            name=${OPTARG}
+            ;;
+        l)
+            action="list"
+            ;;
+        *)
+            usage
+            ;;
+    esac
+done
+
+
+thisdir=$(dirname "$(which "$0")")
+
+if [ "$action" = "add" ]; then
+    $thisdir/add $name $path $hide
+elif [ "$action" = "delete" ]; then
+    $thisdir/delete $name
+elif [ "$action" = "list" ]; then
+    $thisdir/list
+fi
+

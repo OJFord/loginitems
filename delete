@@ -1,0 +1,11 @@
+#!/usr/bin/osascript
+
+on run (argv)
+    set iname to (item 1 of argv)
+    tell application "System Events"
+        if login item iname exists then
+            delete login item iname
+        end if
+    end tell
+end run
+

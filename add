@@ -1,0 +1,13 @@
+#!/usr/bin/osascript
+
+on run (argv)
+    set iname to (item 1 of argv)
+    set ipath to (item 2 of argv)
+    set ihide to (item 3 of argv)
+    tell application "System Events"
+        if (login item iname exists) is false then
+            make login item at end with properties {name:iname, path:ipath, hidden:ihide}
+        end if
+    end tell
+end run
+
