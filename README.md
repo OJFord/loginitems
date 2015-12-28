@@ -19,11 +19,15 @@ Usage: loginitems [-h | -a NAME [-p PATH] [-s HIDE?] | -d NAME | -l]
 
 For example:
 ```sh
-% loginitems -a Caffeine -p "/Applications/Caffeine.app"
+% loginitems -a Caffeine 
 % loginitems -l
 Caffeine
 % loginitems -d Caffeine
 % loginitems -l
+% loginitems -a "Custom Name" -p "/Applications/Caffeine.app"
+% loginitems -a "App" -p "/that/I/decided/to/store/elsewhere/because/yolo.not-app"
+% loginitems -l
+Custom Name, App
 %
 ```
 
