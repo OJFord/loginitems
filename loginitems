@@ -1,10 +1,10 @@
 #!/bin/sh
 
 usage(){
-    echo "Usage: loginitems [-h | -a NAME -p PATH [-s HIDE?] | -d NAME | -l]"
+    echo "Usage: loginitems [-h | -a NAME [-p PATH] [-s HIDE?] | -d NAME | -l]"
     echo "  -h Show this help message."
     echo "  -a Add an application, optionally hide with -s false."
-    echo "  -p Path to application."
+    echo "  -p Path to application; defaults to /Applications/NAME.app."
     echo "  -s Show/hide application; defaults to true (no hide)."
     echo "  -d Delete an application from login items."
     echo "  -l List all login items."
@@ -18,6 +18,9 @@ while getopts "$opts" opt; do
         a)
             action="add"
             name=${OPTARG}
+            if [ ! $path ]; then
+                path="/Applications/$name.app"
+            fi
             ;;
         p)
             path=${OPTARG}

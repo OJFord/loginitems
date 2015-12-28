@@ -8,10 +8,10 @@ Otherwise, you'll need to clone/download the repo to somewhere on your path, and
 
 ## Usage
 ```sh
-Usage: loginitems [-h | -a NAME -p PATH [-s HIDE?] | -d NAME | -l]
+Usage: loginitems [-h | -a NAME [-p PATH] [-s HIDE?] | -d NAME | -l]
   -h Show this help message.
   -a Add an application, optionally hide with -s false.
-  -p Path to application.
+  -p Path to application; defaults to /Applications/NAME.app.
   -s Show/hide application; defaults to true (no hide).
   -d Delete an application from login items.
   -l List all login items.
