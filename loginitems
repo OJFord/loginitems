@@ -45,7 +45,7 @@ while getopts "$opts" opt; do
 done
 
 if [ "$action" = "add" ]; then
-    loginitems-add "$name" "$path" $hide >> /dev/null
+    loginitems-add "$name" "$path" "$hide" >> /dev/null
 elif [ "$action" = "delete" ]; then
     loginitems-rm "$name" >> /dev/null
 elif [ "$action" = "list" ]; then
