@@ -12,7 +12,7 @@ usage(){
 
 hide="false"
 falsehood="false no 0"
-opts="ha:p:s:d:l"
+opts="h:a:p:s:d:l"
 while getopts "$opts" opt; do
     case "$opt" in
         a)
