@@ -1,8 +1,14 @@
 #!/usr/bin/osascript
 
 on run (argv)
+    set output to ""
     tell application "System Events"
-        get the name of every login item
+        set loginItems to every login item
+        repeat with iten in loginItems
+            set item_name to name of iten
+            set item_path to path of iten
+            set item_hidden to hidden of iten
+            set output to (output & item_name & ";" & item_path & ";" & item_hidden & "\n")
+        end repeat
     end tell
 end run
-
