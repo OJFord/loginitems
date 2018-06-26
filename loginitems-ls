@@ -4,11 +4,8 @@ on run (argv)
     set output to ""
     tell application "System Events"
         set loginItems to every login item
-        repeat with iten in loginItems
-            set item_name to name of iten
-            set item_path to path of iten
-            set item_hidden to hidden of iten
-            set output to (output & item_name & ";" & item_path & ";" & item_hidden & "\n")
+        repeat with i in loginItems
+            set output to (output & name of i & ";" & path of i & ";" & hidden of i & "\n")
         end repeat
     end tell
 end run
