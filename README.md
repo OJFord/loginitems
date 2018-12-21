@@ -18,7 +18,7 @@ Usage: loginitems [-h | -a NAME [-p PATH] [-s HIDE?] | -d NAME | -l]
   -p Path to application; defaults to /Applications/NAME.app.
   -s Show/hide application; defaults to true (no hide).
   -d Delete an application from login items.
-  -l List all login items.
+  -l List all login items (default if no option specified).
 ```
 
 For example:
