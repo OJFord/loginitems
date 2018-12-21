@@ -7,12 +7,13 @@ usage(){
     echo "  -p Path to application; defaults to /Applications/NAME.app."
     echo "  -s Show/hide application; defaults to true (no hide)."
     echo "  -d Delete an application from login items."
-    echo "  -l List all login items."
+    echo "  -l List all login items (default if no option specified)."
 }
 
 hide="false"
 falsehood="false no 0"
 opts="h:a:p:s:d:l"
+action="list"
 while getopts "$opts" opt; do
     case "$opt" in
         a)
@@ -51,4 +52,3 @@ elif [ "$action" = "delete" ]; then
 elif [ "$action" = "list" ]; then
     loginitems-ls
 fi
-
